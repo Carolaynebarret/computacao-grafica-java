@@ -7,8 +7,9 @@ import javax.swing.JFrame;
 
 public class Circulo extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+
 	int alt, larg;
-	Graphics g;
 
 	public Circulo(int alt, int larg) {
 		setSize(larg, alt);/* Determina o tamanho da tela */
@@ -55,10 +56,10 @@ public class Circulo extends JFrame {
 		y = 0;
 
 		for (t = 1; t < 360; t = t + 0.1) {
-			g.setColor(Color.BLACK);
-			g.drawLine(x + xc, y + yc, x + xc, y + yc);
 			x = (int) (r * Math.cos(Math.PI * t / 180));
 			y = (int) (r * Math.sin(Math.PI * t / 180));
+			g.setColor(Color.BLACK);
+			g.drawLine(x + xc, y + yc, x + xc, y + yc);
 		}
 
 	}

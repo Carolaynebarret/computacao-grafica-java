@@ -1,6 +1,5 @@
 package computacaografica;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Scanner;
 
@@ -8,8 +7,9 @@ import javax.swing.JFrame;
 
 public class Elipse extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+
 	int alt, larg;
-	Graphics g;
 
 	public Elipse(int alt, int larg) {
 		setSize(larg, alt);/* Determina o tamanho da tela */
@@ -97,7 +97,7 @@ public class Elipse extends JFrame {
 
 	public void preencher(int raiox, int raioy, Elipse e) {
 
-		for (int aux = 0; aux < raiox || aux < raioy; raiox--, raioy--) {
+		while (raiox > 0 || raioy > 0) {
 			Graphics g = getGraphics();
 
 			int x, y, alt, larg;
@@ -148,6 +148,9 @@ public class Elipse extends JFrame {
 					auxp = auxp + 2 * raioy * raioy * xc - 2 * raiox * raiox * yc - raiox * raiox;
 				}
 			}
+
+			raiox--;
+			raioy--;
 		}
 	}
 
