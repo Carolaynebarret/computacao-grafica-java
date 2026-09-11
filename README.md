@@ -35,8 +35,8 @@ Não há build automatizado; cada classe é compilada e executada diretamente:
 
 ```bash
 # clonar o repositório
-git clone https://github.com/Carolaynebarret/computacaografica.git
-cd computacaografica
+git clone https://github.com/Carolaynebarret/computacao-grafica-java.git
+cd computacao-grafica-java
 
 # compilar todas as classes respeitando o pacote "computacaografica"
 javac -d . *.java
@@ -57,7 +57,7 @@ O projeto não possui suíte de testes automatizados (não há JUnit nem outro f
 ## Estrutura de pastas
 
 ```
-computacaografica/
+computacao-grafica-java/
 ├── Circulo.java          # círculo: paramétrico, ponto médio e preenchimento
 ├── Elipse.java            # elipse: ponto médio e preenchimento
 ├── Poligono.java          # polígono: desenho e preenchimento por scanline
