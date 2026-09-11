@@ -8,9 +8,10 @@ import javax.swing.JFrame;
 
 public class Triangulo extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+
 	int alt,larg;
-	Graphics g;
-	
+
 	public Triangulo (int alt,int larg) {
 	setSize(larg,alt);/*Determina o tamanho da tela*/
 	setLocationRelativeTo(null);/*centraliza a tela*/
@@ -37,7 +38,7 @@ public class Triangulo extends JFrame {
 	public  void limpar_tela(Triangulo t) {
 
 		Graphics g = getGraphics();/*pega a resolução definida pelo costrutor*/
-		g.clearRect(0, 0, t.getAlt(), t.getLarg());/*função resevada da bliblioteca 
+		g.clearRect(0, 0, t.getLarg(), t.getAlt());/*função resevada da bliblioteca
 										que limpa a tela*/
 		 
 		 }
@@ -61,7 +62,7 @@ public class Triangulo extends JFrame {
 public void Escala(int x0,int xf, int y0,int yf,Triangulo t,int ce){
 		
 		Graphics g = getGraphics();/*pega a resolução definida pelo costrutor*/
-		int auxx0,auxxf,auxy0,auxyf,alt,larg,auxce;
+		int auxx0,auxxf,auxy0,auxyf,alt,larg;
 		
 		auxx0=x0*ce;
 		auxxf=xf*ce;
@@ -91,7 +92,7 @@ public void Rotacao(int x0,int xf, int y0,int yf,Triangulo t,double angulo) {
 	
 public void Translatacao(int x0,int xf, int y0,int yf,Triangulo t,int tx,int ty) {
 	Graphics g = getGraphics();/*pega a resolução definida pelo costrutor*/
-	int auxx0,auxxf,auxy0,auxyf,alt,larg,auxce;
+	int auxx0,auxxf,auxy0,auxyf,alt,larg;
 	
 	auxx0=x0+tx;
 	auxxf=xf+tx;
@@ -124,7 +125,7 @@ public void espelhamento(int x0,int xf, int y0,int yf,Triangulo t){
 public void Escala_fixa(int x0,int xf, int y0,int yf,Triangulo t,int ce){
 	
 	Graphics g = getGraphics();/*pega a resolução definida pelo costrutor*/
-	int auxx0,auxxf,auxy0,auxyf,alt,larg,auxce;
+	int auxx0,auxxf,auxy0,auxyf,alt,larg;
 	
 	auxx0=x0*ce+55*(1-ce);
 	auxxf=xf*ce+55*(1-ce);

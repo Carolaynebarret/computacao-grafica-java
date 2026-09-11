@@ -9,8 +9,9 @@ import javax.swing.JFrame;
 
 public class Poligono extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+
 	int alt, larg;
-	Graphics g;
 
 	private int[] Pontos_x = { 230, 110, 450, 110 };/* cordenadas x dos vertices */
 	private int[] Pontos_y = { 200, 110, 200, 300 };/* cordenadas y dos vertices */
@@ -48,8 +49,6 @@ public class Poligono extends JFrame {
 
 	public void desenhar() {
 		Graphics g = getGraphics();
-
-		Polygon poly = new Polygon(Pontos_x, Pontos_y, Pontos_n);
 
 		for (int i = 0; i < Pontos_n; i++) {
 			int x2 = Pontos_x[i];
@@ -89,11 +88,14 @@ public class Poligono extends JFrame {
 				if ((y2 < y && y3 >= y)
 						|| (y3 < y && y2 >= y)) {/* verifica o valor de ymin e ymax em relação aos nossos vertices */
 					int x = x2 + (y - y2) * (x3 - x2) / (y3 - y2);/* calcula o valor de x */
-					scan[x]++;/* registra a tela */
 
-					if (x < x1) {
-						x1 = x;
-					} /* verifica o menor ponto de x */
+					if (x >= 0 && x < scan.length) {/* evita ArrayIndexOutOfBoundsException quando a interseção cai fora da tela */
+						scan[x]++;/* registra a tela */
+
+						if (x < x1) {
+							x1 = x;
+						} /* verifica o menor ponto de x */
+					}
 				}
 			}
 
